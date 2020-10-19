@@ -14,10 +14,7 @@ for(var i=0; i<8; i++){
 	document.getElementById(i+1 + '').classList.add(color[i]);
 };
 
-/*document.getElementById('1').onclick = function(){
-	
-	document.getElementById('color-panel').classList.add(color[0]);
-}*/
+
 
 function getId(el){
 	// 아이디값 가져오고
