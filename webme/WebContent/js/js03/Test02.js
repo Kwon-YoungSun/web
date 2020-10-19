@@ -34,9 +34,9 @@ function getId(el){
 	
 	// 이미지 속성값 초기화
 	for(var i=0; i<8; i++){
-		document.getElementById('image-panel').style.removeProperty('background-image');
+		document.getElementById('image-panel').style.removeProperty(background-image);
 	}
 	// 텍스트와 색상 변경
 	document.getElementById('default-text').innerText = '';
-	document.getElementById('image-panel').style.setProperty('background-image', 
+	document.getElementById('image-panel').style.setProperty('background-image', url(imgList(sid*1)));
 };
