@@ -55,7 +55,10 @@ document.write('### 배열 정렬 하기 ###');
 document.write('<br>');
 arr = arr.concat('박진우', '김영선');
 arr.sort();
-document.write('concat : ' + arr.join('-'));
+document.write('sort : ' + arr.join('-'));
+document.write('<br>');
+document.write('reverse : ' + arr.reverse('-'));
+
 
 
 
