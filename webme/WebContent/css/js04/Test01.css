@@ -1,0 +1,27 @@
+.content {
+	max-width: 800px;
+}
+
+.imgbox {
+	width: 350px;
+	height: 350px;
+	padding: 10px;
+	border: 2px solid gray;
+}
+
+img#avt {
+	width: 324px;
+	height: 324px;
+	border: solid 3px gray;
+	padding: 10px;
+}
+
+.soojin {
+	height: 350px;
+}
+
+.blnk {
+	width: 10px;
+	height: 100%;
+	visibility: hidden;
+}

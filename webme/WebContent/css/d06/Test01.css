@@ -1,0 +1,43 @@
+body {
+	text-align: center;
+	font-family: 나눔고딕;
+}
+.content {
+	display: inline-block;
+	width: 500px;
+}
+button {
+	display: block;
+	height: 30px;
+	margin: 0 auto;
+}
+
+#btn1{
+	font-weight: bold;
+	font-size: 14pt;
+	padding: 10px;
+	height: 45px;
+	width: 410px;
+	cursor: pointer;
+}
+
+img {
+	margin-top: 20px;
+	width: 400px;
+	height: auto;
+	padding: 5px;
+	border: 1px solid gray;
+	border-radius: 50%;
+}
+
+img:hover{
+	box-shadow: lightgray 0px 0px 10px 10px;
+	opacity: 50%;
+	cursor: pointer;
+}
+
+#btn1:hover{
+	color: #fff;
+	background-color: black;
+	border: none;
+}

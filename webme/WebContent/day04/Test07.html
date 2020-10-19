@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Class</title>
+<style type="text/css">
+	body {
+		text-align: center;
+	}
+	
+	h1 ~ ul {
+		color: blue;
+		font-size: 16pt;
+		font-weight: bold;
+	}
+	
+	div ~ h3 {
+		color: deeppink;
+	}
+	
+	p ~ p {
+		color: midnightblue;
+		font-weight: bold;
+		font-family: d2coding;
+		font-size: 18pt;
+		font-style: italic;
+	}
+	
+</style>
+</head>
+<body>
+	<p>단락태그</p>
+	<div>
+		<h1>형제 선택자1</h1>
+		<h2>형제 선택자2</h2>
+		<ul>목 록 1
+			<li>주제 1</li>
+			<li>주제 2</li>
+		</ul>
+	</div>
+	<ul>목 록 2
+		<li>주제 3</li>
+		<li>주제 4</li>
+	</ul>
+	<h3>Sibling Selector - 1</h3>
+	<h4>같은 레벨 형제</h4>
+	<p>일반 형제 선택자에 의한 스타일 적용</p>
+	<h3>Sibling Selector - 2</h3>
+	<h3>Sibling Selector - 3</h3>
+</body>
+</html>

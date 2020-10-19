@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selector</title>
+<style>
+	body {
+		color: lightslategray;
+		text-align: center;
+	}
+	.info {
+		display: block;
+	}
+	p + h3 > .info{
+		color: dodgerblue;
+	}
+	.info > .info{
+		color: lightslategray;
+	}
+	
+	body > div > h3 {
+		color: crimson;
+	}
+	
+	body > p{
+		color: dodgerblue;
+		background-color: lightcyan;
+		padding: 5px;
+	}
+	
+	body > h3 > tel > hp {
+		color: orange!important;	
+	}
+	
+</style>
+</head>
+<body>
+	text
+	<div>
+		<h3>Child Selector 1</h3>
+	</div>
+	<p>자식 선택자</p>
+	<h3>
+		<sno class="info">12345</sno>
+		<std class="info">이지우</std>
+		<tel class="info">
+			<office class="info">02-1234-5678</office>
+			<hp class="info">010-9876-5432</hp>
+		</tel>
+	</h3>
+</body>
+</html>

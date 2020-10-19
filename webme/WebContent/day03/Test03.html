@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Audio Tag</title>
+<style>
+	body{
+		text-align: center;
+	}
+	div{
+		display: inline-block;
+		width: 450px;
+		padding: 10px;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<h2 style="background-color: purple; color: white; font-family: 나눔고딕">오디오 자동 재생</h2>
+		<audio src="../media/아기상어.m4a" controls loop autoplay></audio>
+		<h2 style="background-color: indigo; color: white; font-family: 나눔고딕">오디오 수동 재생</h2>
+		<audio src="../media/아기상어.m4a" controls></audio>
+		<audio controls>
+			<source src="../media/아기상어.mp3" type="audio/mpeg">
+			<source src="../media/아기상어.m4a" type="audio/m4a">
+			<source src="../media/아기상어.wav" type="audio/wav">
+			오디오 파일을 재생할 수 없습니다.
+		</audio>
+	</div>
+</body>
+</html>

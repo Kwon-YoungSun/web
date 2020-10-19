@@ -1,0 +1,19 @@
+@charset "UTF-8";
+body {
+	text-align: center;
+	background-color: #E7E7E8;
+	background-image:url("../../img/download/lion.jpg");
+	background-size: 800px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+}
+
+h1 {
+	display: inline-block;
+	background-color: slateblue;
+	border: 3px solid gray;
+	color: #fff;
+	padding: 10px;
+	border-radius: 10px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Semantic</title>
+<style type="text/css">
+	body{
+		text-align: center;
+		font-family: d2coding;
+	}
+	#wrap {
+		width: 600px;
+		border: dashed 2px gray;
+		border-radius: 10px;
+		padding: 10px;
+	}
+	
+	header {
+		width: 100%;
+		border: solid 2px gray;
+		border-radius: 10px;
+		background-color: FloralWhite;
+	}
+	
+	nav {
+		margin-top: 10px;
+		float: left;
+		width: 80px;
+		height: 600px;
+		padding: 10px;
+		border: solid 2px gray;
+		border-radius: 10px;
+		background-color: lightgreen;
+		
+	}
+	
+	section {
+		height: 600px;
+		margin-top: 10px;
+		display: inline-block;
+		width: 350px;
+		border: solid 2px gray;
+		border-radius: 10px;
+		background-color: lightgreen;
+		padding: 10px;
+	}
+	
+	aside {
+		height: 600px;
+		margin-top: 10px;
+		float: right;
+		width: 80px;
+		border: solid 2px gray;
+		border-radius: 10px;
+		background-color: lightgreen;
+		padding: 10px;
+	}
+	
+	footer {
+		margin-top: 10px;
+		clear: both;
+		width: 100%;
+		border: solid 2px gray;
+		border-radius: 10px;
+		background-color: Khaki;
+	}
+	
+	section > header, section > article, section > footer {
+		border: solid 2px gray;
+		background-color: LemonChiffon;
+		width: 100%;
+		border-radius: 10px;
+		margin-top: 10px;
+	}
+	
+	section > article {
+		height: 60%;
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<h2>&lt;header&gt;</h2>
+		</header>
+		<nav>		
+			<h2>&lt;nav&gt;</h2>
+		</nav>
+		
+		<section>
+			<h2>&lt;section&gt;</h2>
+			<header class="sh"><h2>&lt;header&gt;</h2></header>
+			<article class="sa"><h2>&lt;article&gt;</h2></article>
+			<footer class="sf"><h2>&lt;footer&gt;</h2></footer>
+		</section>
+		
+		<aside>
+			<h2>&lt;aside&gt;</h2>
+		</aside>
+		<footer>
+			<h2>&lt;footer&gt;</h2>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>VisibilityTest</title>
+<link rel="stylesheet" type="text/css" href="../css/d06/Test02.css">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<div class="content">
+		<h1>display test</h1>
+		<div class="d1 color1" id="dv1">div1</div>
+		<div class="d1 color2" id="dn">div2 - display none</div>
+		<div class="d1 color3" id="dv3">div3</div>
+		<div class="d1 color4" id="vh">div4 - visiblity hidden</div>
+		<div class="d1 color5">div5</div>
+	</div>
+</body>
+<script type="text/javascript">
+	document.getElementById('dv1').onclick = function(){
+		document.getElementById('dn').style = 'display: block;';
+	}
+	document.getElementById('dn').onclick = function(){
+		document.getElementById('dn').style = 'display: none;';
+	}
+	document.getElementById('dv3').onclick = function(){
+		document.getElementById('vh').style = 'visibility: visible;';
+	}
+	document.getElementById('vh').onclick = function(){
+		document.getElementById('vh').style = 'visibility: hidden;';
+	}
+</script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<style type="text/css">
+	input{
+		width: 100%;
+	}
+	/* #hidepanel {
+		display: none;
+	} */
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div class="w3-content w3-center" style="max-width: 600px;">
+		<h2 class="w3-green w3-padding">회원 정보 입력</h2>
+		
+		<!-- 폼 영역 -->
+		<div class="w3-padding w3-card-4">
+			<div class="w3-margin w3-row">
+				<div class="w3-col" style="width: 60px;">
+					<label for="id">I D : </label>
+				</div>
+				<div class="w3-rest">
+					<input type="text" id="id" name="id">
+				</div>
+			</div>
+			
+			<div class="w3-margin w3-row">
+				<div class="w3-col" style="width: 60px;">
+					<label for="pw">P W : </label>
+				</div>
+				<div class="w3-rest">
+					<input type="password" id="pw" name="pw">
+				</div>
+			</div>
+			
+			<div class="w3-margin w3-row">
+				<div class="w3-col" style="width: 60px;">
+					<label for="name">이 름 : </label>
+				</div>
+				<div class="w3-rest">
+					<input type="text" id="name" name="name">
+				</div>
+			</div>
+			
+			<div class="w3-margin w3-row">
+				<div class="w3-col" style="width: 60px;">
+					<label for="test">Test : </label>
+				</div>
+				<div class="w3-rest">
+					<input type="text" id="test" name="test">
+				</div>
+			</div>
+		</div>
+		
+		<!-- 버튼 영역 -->
+		<div class="w3-row w3-margin-top w3-margin-bottom">
+			<div class="w3-button w3-half w3-blue w3-padding" id="resetB">리셋</div>
+			<div class="w3-button w3-half w3-red w3-padding" id="readB">내용읽기</div>
+		</div>
+		
+		<!-- 숨겨진 폼 영역 -->
+		<div class="w3-padding w3-card-4 w3-hide" id="hidepanel">
+			<div class="w3-margin w3-row">
+				<div class="w3-col" style="width: 60px;">
+					<label for="id">I D : </label>
+				</div>
+				<div class="w3-rest" id="rid">
+					
+				</div>
+			</div>
+			
+			<div class="w3-margin w3-row">
+				<div class="w3-col" style="width: 60px;">
+					<label for="pw">P W : </label>
+				</div>
+				<div class="w3-rest" id="rpw">
+					
+				</div>
+			</div>
+			
+			<div class="w3-margin w3-row">
+				<div class="w3-col" style="width: 60px;">
+					<label for="name">이 름 : </label>
+				</div>
+				<div class="w3-rest" id="rname">
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- 버튼 태그 -->
+		<div class="w3-col w3-card-4 w3-margin-top w3-margin-bottom">
+			<div class="w3-half w3-button w3-green w3-hover-lime btn" id="b1"><h3>btn01</h3></div>
+			<div class="w3-half w3-button w3-green w3-hover-lime btn" id="b2"><h3>btn02</h3></div>
+			<div class="w3-half w3-button w3-green w3-hover-lime btn" id="b3"><h3>btn03</h3></div>
+			<div class="w3-half w3-button w3-green w3-hover-lime btn" id="b4"><h3>btn04</h3></div>
+			<div class="w3-half w3-button w3-green w3-hover-lime btn" id="b5"><h3>btn05</h3></div>
+			<div class="w3-half w3-button w3-green w3-hover-lime btn" id="b6"><h3>btn06</h3></div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/js02/Ex01.js"></script>
+</body>
+</html>

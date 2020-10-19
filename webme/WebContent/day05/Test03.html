@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Position</title>
+<style type="text/css">
+	body {
+		text-align: center;
+		font-size: 14pt;
+		font-weight: bold;
+	}
+	
+	h1 {
+		display: inline-block;
+		width: 500px;
+		border: 1px solid gray;
+	}
+	
+	#sp {
+		position: static;
+		left: 30px;
+		background-color: azure;	
+		width:400px;
+		height: 50px;
+	}
+	.rp1 {
+		position: relative;
+		left: 30px;
+		top: -10px;
+		background-color: aquamarine;
+		width:400px;
+		
+		height: 50px;
+	}
+	.rp2 {
+		position: relative;
+		left: 60px;
+		top: 20px;
+		background-color: aqua;	
+		width:400px;
+		height: 50px;
+	}
+	
+	
+</style>
+</head>
+<body>
+	<h1>position style2</h1>
+	<p id="sp">정적위치 설정 적용</p>
+	<div class="rp1">상대위치 설정 적용 - left 30px, top -10px</div>
+	<p class="rp2">상대위치 설정 적용 - left 60px, top 20px</p>
+</body>
+</html>

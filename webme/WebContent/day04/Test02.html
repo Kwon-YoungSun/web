@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상 선택자</title>
+<style type="text/css">
+	body{
+		text-align: center;
+		width: 900px;
+		margin: 0 auto;
+	}
+	
+	div {
+		width: 450px;
+		height: 45px;
+		padding: 0px;
+		text-align: center;
+		margin: 0 auto;
+	}
+	
+	a {
+		display: inline-block;
+		margin: 10px;
+		font-size: 20pt;
+	}
+	a:visited{
+		color: orange;
+		text-decoration: underline;
+	}
+	a:link{
+		color: lime;
+		text-decoration: none;
+	}
+	a:active{
+		color: pink;
+	}
+	a:hover{
+		border: 5px dotted red;
+		color: red;
+	}
+/*
+	border 속성
+		
+		형식 ]
+			border: 굵기	라인형태	라인컬러;
+				
+				라인형태 ]
+					solid
+					dotted
+					dashed
+					double
+*/
+
+	#d1{
+		width: 200px;
+		height: 50px;
+		margin: 10px;
+		border: 3px solid violet;
+	}
+	#d2{
+		width: 200px;
+		height: 50px;
+		margin: 10px;
+		border: 3px dotted pink;
+	}
+	#d3{
+		width: 200px;
+		height: 50px;
+		margin: 10px;
+		border: 3px dashed orange;
+	}
+	#d4{
+		width: 200px;
+		height: 50px;
+		margin: 10px;
+		border: 3px double indigo;
+	}
+	
+	.dv{
+		display: block;
+		padding: 0px;
+		margin-top: 20px;
+	}
+	
+	label{
+		display: inline-block;
+		width: 100px;
+		height: 25px;
+		font-size: 16pt;
+		text-align: right;
+	}
+	
+	input{
+		display: inline-block;
+		width: 250px;
+		height: 25px;
+		border: solid 1px gray;
+		font-size: 16pt;
+		text-align: center;
+	}
+	
+	input[type=text]:focus{
+		outline: none;
+		background-color: lightblue;
+		border: 1px solid blue;
+	}
+</style>
+</head>
+<body>	
+
+	<a href="Test01.html"><div>Test01</div></a>
+	<a href="Sample.html"><div>Sample</div></a>
+	
+	<div>
+		<div id="d1">solid</div>
+		<div id="d2">dotted</div>
+		<div id="d3">dashed</div>
+		<div id="d4">double</div>
+		
+		<div class="dv">
+			<label for="id">아이디 : </label>	
+			<input type="text" id="id" placeholder="아이디입력">
+		</div>
+		<div class="dv">
+			<label for="addr">주 소 : </label>	
+			<input type="text" id="addr" placeholder="주소입력">
+		</div>
+	</div>
+</body>
+</html>

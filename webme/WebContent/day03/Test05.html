@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>텍스트 표현 태그들</title>
+<style>
+/*
+	body{
+		padding: 0px;
+		margin: 0px;
+		font-size: 0pt;
+		text-align: center;
+	}
+*/
+	body{
+		text-align: center;
+	}
+	
+	h1, h2, h3, h4, h5, h6{
+		display: inline-block;
+		width: 200px;
+		padding: 10px;
+		/*font-size: 20pt;*/
+		margin: 0px;
+	}
+	
+	span {
+		font-size: 11pt;
+		background-color: orange;
+	}
+	
+</style>
+</head>
+<body>
+	<h1 style="background-color: indigo;">h1 태그</h1>
+	<h2 style="background-color: purple;">h2 태그</h2>
+	<h3 style="background-color: dodgerblue;">h3 태그</h3>
+	<h4 style="background-color: violet;">h4 태그</h4>
+	<h5 style="background-color: pink;">h5 태그</h5>
+	<h6 style="background-color: skyblue;">h6 태그</h6>
+	<hr>
+	<span>인라인요소</span><span style="background-color: white;">&nbsp;</span>
+	<span style="color: gray; font-weight: bold">테스트1</span>
+	<span style="background-color: white;">&nbsp;</span>
+	<span>테스트2</span>
+	<hr>
+	<p>여기는 p 태그</p>
+	<!-- 
+		브라우저화면에
+		
+			여기는 <p> 태그
+		가 표현되게 하세요.
+	 -->
+	 
+	 <p>여기는 &lt;p&gt; 태그</p>
+	 <pre>
+	 &lt;!--
+	 	브라우저화면에
+	 	
+	 		여기는 &lt;p&gt; 태그
+	 	가 표현되게 하세요.
+	 	
+	 	pre tag는 블럭태그이다.
+	 	pre tag는 여러개의 공백, 줄바꿈 표현이 된다.
+	 --&gt;
+	 	<div style="font-size: 30pt; color: gray; font-weight: bold;">test</div>
+	 </pre>	 
+</body>
+</html>

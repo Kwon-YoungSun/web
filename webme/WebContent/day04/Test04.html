@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+		text-align: center;
+	}
+	
+	.content {
+		display: inline-block;
+		width: 500px;
+	}
+	
+	h2 {
+		padding: 10px;
+		background-color: orangered;
+		color: white;
+	}
+	
+	.box{
+		display: inline-block;
+		width: 100px;
+		text-align: left;
+	}
+	
+	input:checked{
+		background-color: orange;
+		width: 50px;
+		height: 50px;
+	}
+	
+	.content > *:first-child {
+		background-color: olive;
+	}
+	
+	/*
+		nth-child ==> 형제관계에 있는 요소들까지 셈. 주의하자!!!
+	*/
+	.content > div:nth-child(2n){
+		border: 2px solid teal;
+	}
+	
+	.content > div:nth-last-child(3n){
+		background-color: thistle;
+	}
+	
+	h2, label{
+		color: crimson;
+	}	
+	.content > div:last-child > label{
+		color: lightseagreen;
+	}
+	
+	div:nth-child(2) > label, div:nth-child(4) > label{
+		color: darkorange;
+	}
+	
+	:nth-child(3) ~ div{
+		border: 3px solid deeppink;
+	}
+	/*
+	:nth-child(3) + div{
+		border: 3px solid deeppink;
+	}
+	*/
+</style>
+</head>
+<body>
+	<div class="content">
+		<h2>수강 과목 선택</h2>
+		<div class="box">
+			<input type="checkbox" name="fab" value="java" checked>
+			<label for="java">Java</label>
+		</div>
+		<div class="box">
+			<input type="checkbox" name="fab" value="oracle">
+			<label for="oracle">Oracle</label>
+		</div>
+		<div class="box">
+			<input type="checkbox" name="fab" value="html5">
+			<label for="html5">HTML5</label>
+		</div>
+		<span>쉬어가기</span>
+		<div class="box">
+			<input type="checkbox" name="fab" value="css" checked>
+			<label for="css">CSS3</label>
+		</div>
+		<div class="box">
+			<input type="checkbox" name="fab" value="javascript">
+			<label for="javascript">JavaScript</label>
+		</div>
+		<div class="box">
+			<input type="checkbox" name="fab" value="jQuery">
+			<label for="jQuery">JQuery</label>
+		</div>
+		<div class="box">
+			<input type="checkbox" name="fab" value="jsp">
+			<label for="jsp">JSP</label>
+		</div>
+		<div class="box">
+			<input type="checkbox" name="fab" value="spring">
+			<label for="sprint">Spring</label>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+body {
+	text-align: center;
+	font-size: 0px;
+}
+
+.content {
+	display: inline-block;
+	width: 700px;
+	height: 450px;
+}
+
+div > div {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	font-size: 20px;
+	font-weight: bold;
+	border: solid 1px black;
+	margin: 10px;
+}
+
+.d1 {
+	background: linear-gradient(180deg, red, yellow);
+}
+
+.d2 {
+	background: linear-gradient(to right, red, yellow);
+}
+
+.d3 {
+	background: linear-gradient(to right bottom, red, yellow);
+}
+.d4 {
+	background: linear-gradient(90deg, red, yellow, green);
+}
+.d5 {
+	background: linear-gradient(90deg, red, yellow 30%, green);
+}
+.d6 {
+	background: linear-gradient(90deg, red 20%, yellow, green 80%);
+}

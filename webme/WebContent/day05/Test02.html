@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Position</title>
+<style type="text/css">
+	body{
+		text-align: center;
+		font-size: 16pt;
+		font-weight: bold;
+	}
+	.box {
+		display: inline-block;
+		width: 500px;
+	}
+	.sp1 {
+		display: inline-block;
+		position: static;
+		top: 100px;
+		background-color: cyan;
+		width: 400px;
+		height: 50px;
+	}
+	.sp2 {
+		display: inline-block;
+		position: static;
+		left: 03px;
+		background-color: orange;
+		width: 400px;
+		height: 50px;
+	}
+	.sp3 {
+		display: inline-block;
+		background-color: lime;
+		width: 400px;
+		height: 50px;
+	}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h1>position style1</h1>
+		<p class="sp1">정적위치 설정 적용1</p>
+		<div class="sp2">정적위치 설정 적용2</div>
+		<p class="sp3">기본위치 설정</p>
+	</div>
+</body>
+</html>

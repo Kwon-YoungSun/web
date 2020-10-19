@@ -1,0 +1,47 @@
+body {
+	text-align: center;
+}
+.color1 {
+	background-color: mediumslateblue;
+}
+.color2 {
+	background-color: mediumpurple;
+}
+.color3 {
+	background-color: mediumorchid;
+}
+.color4 {
+	background-color: magenta;
+}
+.color5 {
+	background-color: mediumvioletred;
+}
+
+.content {
+	display: inline-block;
+	width: 500px;
+	text-align: center;
+	font-size: 16pt;
+	font-weight: bold;
+	color: #fff;
+}
+
+h1 {
+	background-color: indigo;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+.d1 {
+	margin-top: 15px;
+	height: 50px;
+	line-height: 200%;
+	padding: 10px;
+	cursor: pointer;
+}
+#dn {
+	display: none;
+}
+#vh {
+	visibility: hidden;
+}
