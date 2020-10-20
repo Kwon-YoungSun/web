@@ -7,6 +7,10 @@ function func01(){
 		var sage = document.getElementById('tage').value;
 		var sgen = document.getElementById('tgen').value;
 		
+		if(!(sname || sage || sgen)) { /*sname == null || sage == null || sgen == null*/
+			alert('입력하세요');
+			return;
+		}
 		// 대상 페이지로 데이터를 전송한다.
 		// location.href = './sample.html?name='+sname+'&age='+sage+'&gen='+sgen;
 		
