@@ -110,14 +110,14 @@
 			confirmMsg('아이디', result);
 		} else if(tagId=='msg3'){
 			str = document.getElementById('pw').value;
-			pat = /^[a-zA-Z0-9]+([!@#$%^&*])$/;
+			pat = /^[a-zA-Z0-9]+([!@#$%^&*]?)$/;
 			result = pat.test(str);
 			if(str == '') result = true;
 			// alert(result);
 			confirmMsg('비밀번호', result);
 		} else if(tagId=='msg4'){
 			str = document.getElementById('mail').value;
-			pat = /^[a-z]+([-_]?[0-9a-zA-Z]{4,12})@+[a-z]{5,8}\.com+/;
+			pat = /^[a-z]+(\w{4,12})@[a-z]{5,8}\.com+/;
 			result = pat.test(str);
 			if(str == '') result = true;
 			// alert(result);

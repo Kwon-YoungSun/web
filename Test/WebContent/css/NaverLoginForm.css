@@ -142,3 +142,22 @@ footer > p {
 	font-weight: normal;
 	color: #7E7E7E;
 }
+
+.id_wrap {
+	position: relative;
+}
+
+
+.step_url {
+	position: absolute;
+	top: 16px;
+	right: 13px;
+	color: #8E8E8E;
+	font-size: 15px;
+}
+/*confirm 영역(숨겨진 영역*/
+#id_confirm {
+	color: red;
+	display: none;
+	font-size: 12px;
+}
