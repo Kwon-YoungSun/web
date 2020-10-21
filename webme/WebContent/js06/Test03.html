@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/cls.css">
+<!-- <script type="text/javascript" src="../js/"></script> -->
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<div class="w3-content w3-center mv600">
+		<h1 class="w3-orange">정규표현식 검사</h1>
+		
+		<div class="w3-col">
+			<label class="w3-col m2" for="name"><h4>이름 : </h4></label>
+			<input type="text" id="name" name="name" class="w3-col m8 w3-border w3-input">
+			<div class="w3-col m2 w3-button w3-blue w3-hover-aqua" id="btn1" onclick="func01(this)">이름체크</div>
+			<div class="w3-col w3-hide" id="msg1"></div>
+		</div>
+		
+		<div class="w3-col w3-margin-top">
+			<label class="w3-col m2" for="id"><h4>아이디 : </h4></label>
+			<input type="text" id="id" name="id" class="w3-col m8 w3-border w3-input">
+			<div class="w3-col m2 w3-button w3-blue w3-hover-aqua" id="btn2" onclick="func01(this)">아이디체크</div>
+			<div class="w3-col w3-hide" id="msg2"></div>
+		</div>
+		
+		<div class="w3-col w3-margin-top">
+			<label class="w3-col m2" for="pw"><h4>비밀번호 : </h4></label>
+			<input type="text" id="pw" name="pw" class="w3-col m8 w3-border w3-input">
+			<div class="w3-col m2 w3-button w3-blue w3-hover-aqua" id="btn3" onclick="func01(this)">비번체크</div>
+			<div class="w3-col w3-hide" id="msg3"></div>
+		</div>
+		
+		<div class="w3-col w3-margin-top">
+			<label class="w3-col m2" for="mail"><h4>메  일 : </h4></label>
+			<input type="text" id="mail" name="mail" class="w3-col m8 w3-border w3-input">
+			<div class="w3-col m2 w3-button w3-blue w3-hover-aqua" id="btn4" onclick="func01(this)">메일체크</div>
+			<div class="w3-col w3-hide" id="msg4"></div>
+		</div>
+		
+		<div class="w3-col w3-margin-top">
+			<label class="w3-col m2" for="tel"><h4>전화번호 : </h4></label>
+			<input type="text" id="tel" name="tel" class="w3-col m8 w3-border w3-input">
+			<div class="w3-col m2 w3-button w3-blue w3-hover-aqua" id="btn5" onclick="func01(this)">번호체크</div>
+			<div class="w3-col w3-hide" id="msg5"></div>
+		</div>
+		
+	</div>
+<script type="text/javascript">
+/* 	function func01(){
+		var el1 = document.getElementById('btn1');
+		el1.addEventListener('click', function(){
+			var tag1 = document.getElementById('msg1');
+			
+			var str = document.getElementById('name').value;
+			
+			var pat1 = /^[가-힣]{2,3}$/;
+			
+			var result = pat1.test(str);
+			alert(result);
+			
+			if(str){
+				tag1.style = 'font-size: 16pt; color: green;';
+				tag1.innerHTML = '클릭되었습니다!';
+			} else {
+				tag1.style = 'font-size: 16pt; color: red;';
+				tag1.innerHTML = '이름을 입력하세요!';
+			}
+			
+			tag1.classList.remove('w3-hide');
+		});
+	} */
+/*
+	할 일 ]
+		1. 버튼의 아이디 값을 넘겨받는다.
+		2. 버튼의 아이디 값에 따라 그에 일치하는 msg 태그를 가져온다.
+		3. 버튼의 아이디 값에 따라 그에 맞는 정규식 검사를 수행한다.(switch-case?)
+ */
+ 	var btnId; // 버튼 id
+	var el;	// 버튼 element
+	var tagId;	// msg id
+	var tag; // msg element
+	
+	var str, pat, result;
+	
+	function func01(main){
+		btnId = main.getAttribute('id');
+		el = document.getElementById(btnId);
+		tagId = 'msg' + btnId.substring(3);
+		tag = document.getElementById(tagId);
+		
+		if(tagId=='msg1'){
+			str = document.getElementById('name').value;
+			pat = /^[가-힣]{2,3}$/;
+			result = pat.test(str);
+			if(str == '') result = true;
+			// alert(result);
+			confirmMsg('이름', result);
+		} else if(tagId=='msg2'){
+			str = document.getElementById('id').value;
+			pat = /^[a-z0-9]{5,20}$/;
+			result = pat.test(str);
+			if(str == '') result = true;
+			// alert(result);
+			confirmMsg('아이디', result);
+		} else if(tagId=='msg3'){
+			str = document.getElementById('pw').value;
+			pat = /^[a-zA-Z0-9]+([!@#$%^&*])$/;
+			result = pat.test(str);
+			if(str == '') result = true;
+			// alert(result);
+			confirmMsg('비밀번호', result);
+		} else if(tagId=='msg4'){
+			str = document.getElementById('mail').value;
+			pat = /^[a-z]+([-_]?[0-9a-zA-Z]{4,12})@+[a-z]{5,8}\.com+/;
+			result = pat.test(str);
+			if(str == '') result = true;
+			// alert(result);
+			confirmMsg('메일', result);
+		} else if(tagId=='msg5'){
+			str = document.getElementById('tel').value;
+			pat = /^010+[0-9]{3,4}[0-9]{3,4}$/;
+			result = pat.test(str);
+			if(str == '') result = true;
+			// alert(result);
+			confirmMsg('전화번호', result);
+		}
+		
+	}
+	
+	function confirmMsg(key, result){
+		if(result == true){
+			if(str){
+				tag.style = 'font-size: 16pt; color: green;';
+				tag.innerHTML = '멋진 ' + key + '이네요!';
+			} else {
+				tag.style = 'font-size: 16pt; color: red;';
+				tag.innerHTML = key +' 입력하세요!';
+				
+			}
+		} else {
+			tag.style = 'font-size: 16pt; color: red;';
+			tag.innerHTML = '잘못된 형식입니다. 다시 입력하세요.';
+		}
+		
+		tag.classList.remove('w3-hide');
+	}
+</script>
+</body>
+</html>

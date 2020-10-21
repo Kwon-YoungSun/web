@@ -21,11 +21,11 @@ function func01(){
 	 var str = '<div class="w3-content w3-center mw650">' + 
 				'	<h1 class="w3-indigo w3-padding">여기는 sample.html 파일</h1>' + 
 				'	<div class="w3-col w3-padding w3-card-4 w3-margin-top">' + 
-				'		<div class="w3-col"><h4 class="w3-text-gray">이름 : <span id="tname">'+sname+'</span></h4></div>' + 
-				'		<div class="w3-col"><h4 class="w3-text-gray">나이 : <span id="tage">'+paradata.age+'</span></h4></div>' + 
-				'		<div class="w3-col"><h4 class="w3-text-gray">전화 : <span id="ttel" class="w3-text-red">'+paradata.tel+'</span></h4></div>' + 
-				'		<div class="w3-col"><h4 class="w3-text-gray">메일 : <span id="tmail">'+paradata.mail+'</span></h4></div>' + 
-				'		<div class="w3-col"><h4 class="w3-text-gray">성별 : <span id="tgen">'+sgen+'</span></h4></div>' + 
+				'		<div class="w3-col"><h4 class="w3-text-gray">이름 : <span id="tname"></span></h4></div>' + 
+				'		<div class="w3-col"><h4 class="w3-text-gray">나이 : <span id="tage"></span></h4></div>' + 
+				'		<div class="w3-col"><h4 class="w3-text-gray">전화 : <span id="ttel" class="w3-text-red"></span></h4></div>' + 
+				'		<div class="w3-col"><h4 class="w3-text-gray">메일 : <span id="tmail"></span></h4></div>' + 
+				'		<div class="w3-col"><h4 class="w3-text-gray">성별 : <span id="tgen"></span></h4></div>' + 
 				'	</div>' +
 				'</div>';
 	document.getElementById('bd').innerHTML = str;
@@ -35,8 +35,8 @@ function func01(){
 
 function setData(){
 	document.getElementById('tname').innerHTML = paradata.name;
-	document.getElementById('tname').innerHTML = paradata.age;
-	document.getElementById('tname').innerHTML = paradata.tel;
-	document.getElementById('tname').innerHTML = paradata.mail;
-	document.getElementById('tname').innerHTML = paradata.gen;
+	document.getElementById('tage').innerHTML = paradata.age;
+	document.getElementById('ttel').innerHTML = paradata.tel;
+	document.getElementById('tmail').innerHTML = paradata.mail;
+	document.getElementById('tgen').innerHTML = paradata.gen;
 }
