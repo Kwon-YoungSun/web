@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/cls.css">
+<!-- CDN 방식으로 jQuery 라이브러리 가져오기 -->
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+<!-- 직접 다운받아 사용하는 방식으로 jQuery 라이브러리 가져오기 -->
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+// 	ready: document 객체가 완성이 되면 실행하는 함수
+//	$ : jQuery의 별칭
+	$(function(){
+		var str = $('#h1').html();
+		
+		// alert(str);
+		//$('.w3-purple').removeClass('w3-purple').addClass('w3-orange');
+		/* $('#h1').html('jQuery 1st 소스!!!'); */
+		/* $('#h1').text('<h1>jQuery 1st 소스!!!</h1>'); */
+		
+		// first() 속성: 선택된 태그들 중 첫번째 요소를 선택한다.
+		$('#ctnt').children().first().html('jQuery 첫번째 소스');
+		
+		// var str = $('h1:first').next().removeClass('w3-orange').addClass('w3-lime').html('jQuery 두번째 소스');
+		/* 
+		str = $(str).next().removeClass('w3-orange').addClass('w3-blue').html('jQuery 세번째 소스');
+		str = $(str).next().removeClass('w3-orange').addClass('w3-pink').html('jQuery 네번째 소스');
+		str = $(str).next().removeClass('w3-orange').addClass('w3-red').html('jQuery 다섯번째 소스'); */
+		
+		// append() : 맨 뒤에 추가, prepend() : 맨 앞에 추가
+		$('#ctnt').append('<div class="w3-col" id="btnbox"></div>');
+		$('#btnbox').append('<div class="w3-half w3-button w3-red w3-hover-orange" id="btn1">버튼1</div>');
+		$('#btnbox').append('<div class="w3-half w3-button w3-blue w3-hover-aqua" id="btn2">버튼2</div>');
+		$('#btnbox').append('<div class="w3-half w3-button w3-green w3-hover-lime" id="btn3">버튼3</div>');
+		$('#btnbox').append('<div class="w3-half w3-button w3-yellow w3-hover-amber" id="btn4">버튼4</div>');
+		$('#btnbox').append('<div class="w3-half w3-button w3-pink w3-hover-purple" id="btn5">버튼5</div>');
+		$('#btnbox').append('<div class="w3-half w3-button w3-cyan w3-hover-aqua" id="btn6">버튼6</div>');
+		
+		/* $('#btn1').click(function(){
+			alert('버튼 1 클릭함');
+		}); */
+		
+		/* $('.w3-button').click(function(){
+			var txt = $(this).attr('id');
+			var bgColor = $(this).css('background-color');
+			$(this).removeClass('w3-green');
+			$(this).removeClass('w3-yellow');
+			// alert('배경색 : ' + bgColor);
+			// alert('클릭된 버튼 아이디 : ' + txt);
+			
+			$(this).css('background-color', 'purple');
+		}); */
+		
+		$('#btn1').click(function(){
+			$('#btnbox').siblings().odd().removeClass('w3-purple').addClass('w3-blue');
+		});
+		$('#btn2').click(function(){
+//			$('#btnbox').siblings().even().removeClass('w3-orange').addClass('w3-purple');
+//			$('#btnbox').siblings().eq(2).removeClass('w3-purple').addClass('w3-teal');
+//			$('#btnbox').siblings().slice(2).removeClass('w3-purple').addClass('w3-teal');
+			$('#ctnt > *:gt(2)').removeClass('w3-purple').addClass('w3-teal');
+		});
+		
+		$('#btn3').click(function(){
+			/* location 객체를 사용해서 전환하는 방법 */
+			
+			$(location).attr('href', '../js05/Sample.html?name=이지우&age=26&mail=jiwoo@increpas.com&tel=010-1234-5678&gen=남자');			
+		});
+		$('#btn4').click(function(){
+			/* form 태그를 사용해서 전환하는 방법 */
+			$('body').prepend('<form method="get" action="../js05/Sample.html" id="frm"></form>');
+			$('#frm').append('<input type="hidden" name="name" value="이지우">');
+			$('#frm').append('<input type="hidden" name="age" value="26">');
+			$('#frm').append('<input type="hidden" name="tel" value="010-1234-5678">');
+			$('#frm').append('<input type="hidden" name="mail" value="jiwoo@increpas.com">');
+			$('#frm').append('<input type="hidden" name="gen" value="남자">');
+						
+			$('#frm').submit();
+		});
+		
+		$('#btn5').click(function(){
+			// 할일
+			// 데이터를 채우고
+			$('#name1').val('이지우');
+			$('#age1').val('26');
+			$('#tel1').val('010-1234-5678');
+			$('#mail1').val('jiwoo@increpas.com');
+			$('#gen1').val('남자');
+			
+			// 폼 전송하고
+			$('#frm1').submit();
+
+		});
+	});
+	
+//	아래 구문은 위의 구문과 같음.
+//	주의 ] jQuery와 javascript 는 별개임
+/* 	$(document).ready(function(){
+		var str = $('#h1').html();
+		
+		alert(str);
+		
+		$('.w3-purple').removeClass('w3-purple').addClass('w3-orange');
+	}); */
+</script>
+</head>
+<body>
+	<form method="GET" action="../js05/Sample.html" id="frm1" name="frm1">
+		<input type="hidden" id="name1" name="name">
+		<input type="hidden" id="age1" name="age">
+		<input type="hidden" id="tel1" name="tel">
+		<input type="hidden" id="mail1" name="mail">
+		<input type="hidden" id="gen1" name="gen">
+	</form>
+		<div class="w3-content w3-center mv600" id="ctnt">
+			<h1 class="w3-purple w3-padding" id="h1">jQuery 첫번째 소스</h1>
+			<h1 class="w3-purple w3-padding" id="h2">jQuery 첫번째 소스</h1>
+			<h1 class="w3-purple w3-padding" id="h3">jQuery 첫번째 소스</h1>
+			<h1 class="w3-purple w3-padding" id="h4">jQuery 첫번째 소스</h1>
+			<h1 class="w3-purple w3-padding" id="h5">jQuery 첫번째 소스</h1>
+		</div>
+</body>
+</html>
