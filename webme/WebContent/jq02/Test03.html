@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/cls.css">
+<script type="text/javascript" src="../js/jQuery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../js/jq02/Test03.js"></script>
+<style type="text/css">
+	label {
+		font-size: 16pt;
+	}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div class="w3-content w3-center mv600">
+		<h1 class="w3-deep-purple">Ajax Login Request</h1>
+		<form method="post" action="http://localhost:8080/login.cls" id="frm" name="frm" class="w3-col w3-card-4 w3-padding">
+			<div class="w3-col w3-margin-top">
+				<label for="id" class="w3-col m2 w3-right-align w3-text-gray">I D : &nbsp;</label>
+				<input type="text" name="id" id="id" placeholder="아이디를 입력하세요!" class="w3-col m10 w3-input w3-border w3-round-4">
+			</div>
+			<div class="w3-col w3-margin-top">
+				<label for="pw" class="w3-col m2 w3-right-align w3-text-gray">P W : &nbsp;</label>
+				<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요!" class="w3-col m10 w3-input w3-border w3-round-4">
+			</div>
+			
+			<div class="w3-col w3-margin-top">
+				<div class="w3-half w3-button w3-red w3-hover-orange" id="btn1">Reset</div>
+				<div class="w3-half w3-button w3-blue w3-hover-aqua" id="btn2">Login</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

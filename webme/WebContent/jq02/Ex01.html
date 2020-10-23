@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/cls.css">
+<script type="text/javascript" src="../js/jQuery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../js/jq02/Ex01.js"></script>
+<style type="text/css">
+	.nameb{
+		margin: 10px;
+	}
+	
+	.w3-display-middle {
+		font-size: 14pt;
+	}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div class="w3-content w3-center mv700">
+		<h1 class="w3-purple w3-padding">Member Information</h1>
+		<div class="w3-row w3-margin-top">
+			<div class="w3-half w3-button w3-blue" id="load">리스트 가져오기</div>
+			<div class="w3-half w3-button w3-red" id="reset">리셋</div>
+		</div>
+		
+		<div id="namelist">
+			<div class="w3-row w3-margin-top">
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">이지우</div>
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">장성환</div>
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">오혜찬</div>
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">유병욱</div>
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">윤요셉</div>
+			</div>
+			
+			<div class="w3-row">
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">박찬종</div>
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">김주영</div>
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">권영선</div>
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">김영선</div>
+				<div class="w3-col m2 w3-button w3-green w3-hover-lime nameb">박진우</div>
+			</div>
+		</div>
+		
+		<div class="w3-border w3-display-container w3-margin-top" style="height: 300px;">
+			<div class="w3-display-middle w3-hide" id="membinfo">
+				<div>이름 : <span id="name"></span></div>
+				<div>나이 : <span id="age"></span></div>
+				<div>전화 : <span id="tel"></span></div>
+				<div>메일 : <span id="mail"></span></div>
+				<div>성별 : <span id="gen"></span></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

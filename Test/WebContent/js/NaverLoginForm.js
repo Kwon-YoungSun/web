@@ -16,12 +16,10 @@ document.getElementById('months').innerHTML = str;
 */
 
 $(document).ready(function(){
-	var str = ''; 	// 표시할 메세지를 담을 변수
+	var str; 	// 표시할 메세지를 담을 변수
 	var pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
-	var result;
-	var data;
-	
-	// 포커스아웃할 경우
+
+	/*// 포커스아웃할 경우
 	$('#id').focusout(function(){	
 		// 입력한 데이터를 가져오기
 		data = $('#id').val();
@@ -42,5 +40,9 @@ $(document).ready(function(){
 			str = '잘못된 형식입니다.';
 		}
 		$('#id_confirm').text(str).css('display', 'block');		
+	});*/
+	
+	$('#id').onchange(function(){
+		
 	});
 });

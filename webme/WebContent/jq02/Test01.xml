@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<people>
+	<person>
+		<name>장성환</name>
+		<id>hwan</id>
+		<age>27</age>
+		<tel>010-2222-2222</tel>
+	</person>
+	<person>
+		<name>오혜찬</name>
+		<id>chan</id>
+		<age>28</age>
+		<tel>010-3333-3333</tel>
+	</person>
+</people>
