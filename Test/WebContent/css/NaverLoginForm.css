@@ -156,8 +156,10 @@ footer > p {
 	font-size: 15px;
 }
 /*confirm 영역(숨겨진 영역*/
-#id_confirm {
+#id_confirm, #pw_confirm, #name_confirm, #pwconf_confirm {
 	color: red;
 	display: none;
 	font-size: 12px;
+	padding: 10px 0;
 }
+

@@ -61,20 +61,57 @@ document.getElementById('months').innerHTML = str;
 	});
 });*/
 
+var pat;	// 패턴을 담을 변수
+var str;	// 표시할 메세지를 담을 변수
 $(document).ready(function(){
-	var str;	// 표시할 메세지를 담을 변수
-	var idPat = /^[a-z]+[a-z0-9_-]{4,18}$/g;
-	var pwPat = /^$/;
 	var cur;	// 현재 포커스를 담을 변수
 	
 	$('.regex').on({
 		blur: function(){
 			cur = '#' + $(this).attr('id');
-			alert(cur);
 			if(!($(cur).val())){
 				str = '필수 정보입니다.';
 			}
-			$('#id_confirm').text(str).css('display', 'block');
+			var text = cur + '_confirm';
+			$(text).text(str).css('display', 'block');
+		},
+		change: function(){
+			// 아이디 가져오고
+			cur = '#' + $(this).attr('id');
+			// 아이디에 맞는 형식화검사 함수를 호출하고
+			switch(cur){
+			case '#id':
+				idConf(cur);
+				break;
+			case '#pw':
+				pwConf(cur);
+				break;
+			case '#pwconf':
+				
+				break;
+			}
 		}
 	});
 });
+
+function idConf(cur){
+	pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
+	var result = $(cur).val().replace(pat, '');
+	if(result == ''){
+		str = '멋진 아이디네요!';
+	} else {
+		str = '잘못된 형식입니다.';
+	}
+	$('#id_confirm').text(str).css('display', 'block');
+}
+
+function pwConf(cur){
+	pat = /^/g;
+	var result = $(cur).val().replace(pat, '');
+	if(result == ''){
+		return;
+	} else {
+		str = '잘못된 형식입니다.';
+	}
+	$('#pw_confirm').text(str).css('display', 'block');
+}
