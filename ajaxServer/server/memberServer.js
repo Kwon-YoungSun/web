@@ -1,5 +1,6 @@
 var http = require('http');		// http 소스코드를 사용하기 위해서 소스코드를 변수에 담아놓고 사용한다.
 var url = require('url');
+var fs = require('fs');
 
 // 왜 큰따옴표로 감싸는가? : 에러가 날 수 있다.
 var userData = {
@@ -48,8 +49,36 @@ var userData = {
 http.createServer(function(request, response){
 	// parse: 필요한 것들만 적당히 잘라서 씀.
 	var pathname = url.parse(request.url).pathname;
+	
+	if(pathname == '/css/w3.css'){
+		var src = fs.readFileSync('../css/w3.css', 'UTF-8');
+		response.writeHead(200, {'Content-Type':'text/css'});
+		response.end(src);
+	}
+	if(pathname == '/css/cls.css'){
+		var src = fs.readFileSync('../css/cls.css', 'UTF-8');
+		response.writeHead(200, {'Content-Type':'text/css'});
+		response.end(src);
+	}
+	if(pathname == '/js/jquery-3.5.1.min.js'){
+		var src = fs.readFileSync('../js/jquery-3.5.1.min.js', 'UTF-8');
+		response.writeHead(200, {'Content-Type':'text/javascript'});
+		response.end(src);
+	}
+	if(pathname == '/js/memberInfo.js'){
+		var src = fs.readFileSync('../js/memberInfo.js', 'UTF-8');
+		response.writeHead(200, {'Content-Type':'text/javascript'});
+		response.end(src);
+	}
+	
+	
 	if(pathname == '/'){
 		
+	}
+	if(pathname == '/memberInfo.cls'){
+		var str = fs.readFileSync('../view/main.html', 'UTF-8');
+		response.writeHead(200, {'Content-Type' : 'text/html'});
+		response.end(str);
 	}
 	if(pathname == '/memberList.cls'){
 		// 할 일
@@ -69,11 +98,39 @@ http.createServer(function(request, response){
 			json 형태의 문자열을 json으로 변환 : JSON.parse(문자열);
 		*/
 	}
+	
+	if(pathname == '/memberDetail.cls'){
+		request.on('data', function(data){
+			var pdata = paramPars(data.toString());
+			var kstr = pdata.mno;
+			
+			var obj = userData[kstr];
+			
+			response.writeHead(200, {'Content-Type': 'text/json'});
+			response.end(JSON.stringify(obj));
+		});
+	}
 }).listen(8080, function(){
 	console.log('*** 서버 기동 ***');
 });
 
-
+function paramPars(d){
+	var tmp = d.split('&'); // id=?????&pw=???? ---> ['id=?????', 'pw=?????']
+	var arr = {};
+	for(var i = 0; i < tmp.length; i++){
+		/*
+		let idx = tmp[i].indexOf('=');
+		let key = tmp[i].substring(0, idx);
+		let val = tmp[i].substring(idx + 1);
+		
+		arr[key] = val;
+		*/
+		tmp[i] = tmp[i].split('=');
+		arr[tmp[i][0]] = tmp[i][1];
+	}
+	
+	return arr;
+}
 
 
 

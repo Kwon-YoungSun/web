@@ -15,34 +15,66 @@ document.getElementById('months').innerHTML = str;
 	4. 비밀번호 검사의 경우 > 비밀번호가 일치하지 않습니다. 
 */
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 	var str; 	// 표시할 메세지를 담을 변수
 	var pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
-
-	/*// 포커스아웃할 경우
-	$('#id').focusout(function(){	
-		// 입력한 데이터를 가져오기
-		data = $('#id').val();
-		
-		// 형식검사하기
-		result = pat.test(data);
-		
-		if(data == '') result = true;
-		
-		// 결과를 출력한다.
-		if(result == true) {
-			if(data) {
-				str = '멋진 아이디네요!';
-			} else {
-				str = '필수 정보입니다.';
-			}
+	
+	$('#id').blur(function(){
+	
+		if(!($('#id').val())){
+			str = '필수 정보입니다.';
+		}
+		$('#id_confirm').text(str).css('display', 'block');
+	});
+	
+	$('#id').change(function(){
+		var result = $('#id').val().replace(pat, '');
+		if(result == ''){
+			str = '멋진 아이디네요!';
 		} else {
 			str = '잘못된 형식입니다.';
 		}
-		$('#id_confirm').text(str).css('display', 'block');		
-	});*/
+		$('#id_confirm').text(str).css('display', 'block');
+	});
+});*/
+
+/*$(document).ready(function(){
+	var str; 	// 표시할 메세지를 담을 변수
+	var pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
 	
-	$('#id').onchange(function(){
-		
+	$('#id').on({
+		blur: function(){
+			if(!($('#id').val())){
+				str = '필수 정보입니다.';
+			}
+			$('#id_confirm').text(str).css('display', 'block');
+		},
+		change: function(){
+			var result = $('#id').val().replace(pat, '');
+			if(result == ''){
+				str = '멋진 아이디네요!';
+			} else {
+				str = '잘못된 형식입니다.';
+			}
+			$('#id_confirm').text(str).css('display', 'block');
+		}
+	});
+});*/
+
+$(document).ready(function(){
+	var str;	// 표시할 메세지를 담을 변수
+	var idPat = /^[a-z]+[a-z0-9_-]{4,18}$/g;
+	var pwPat = /^$/;
+	var cur;	// 현재 포커스를 담을 변수
+	
+	$('.regex').on({
+		blur: function(){
+			cur = '#' + $(this).attr('id');
+			alert(cur);
+			if(!($(cur).val())){
+				str = '필수 정보입니다.';
+			}
+			$('#id_confirm').text(str).css('display', 'block');
+		}
 	});
 });

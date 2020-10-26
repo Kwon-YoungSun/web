@@ -31,11 +31,11 @@
 					<div class="row_group">
 						<!-- 아이디 -->
 						<div class="join_title"><label for="id">아이디</label></div>
-						<div class="id_wrap"><input type="text" id="id" maxlength="20"><span class="step_url">@naver.com</span></div><br>
+						<div class="id_wrap"><input type="text" id="id" maxlength="20" class="regex" required><span class="step_url">@naver.com</span></div><br>
 						<div id="id_confirm"></div>
 						<!-- 비밀번호 -->
 						<div class="join_title"><label for="pw">비밀번호</label></div>
-						<input type="password" id="pw" maxlength="20"><br>
+						<input type="password" id="pw" maxlength="20" class="regex"><br>
 						<!-- 비밀번호 재확인 -->
 						<div class="join_title"><label for="pwconfirm">비밀번호 재확인</label></div>
 						<input type="password" id="pwconfirm" maxlength="20"><br>
@@ -48,7 +48,7 @@
 						<input type="text" id="name"><br>
 						<!-- 생년월일 -->
 						<div class="join_title"><label for="year">생년월일</label></div>
-						<input type="text" id="year" placeholder="년(4자)" maxlength="4">
+						<input type="text" id="year" placeholder="년(4자)" maxlength="4" class="regex">
 						<select name="months" id="months">
 							<option value="월">월</option>
 							<!-- <option value=1>1</option>
@@ -64,7 +64,7 @@
 							<option value=11>11</option>
 							<option value=12>12</option> -->
 						</select>
-						<input type="text" id="day" placeholder="일" maxlength="2"><br>
+						<input type="text" id="day" placeholder="일" maxlength="2" class="regex"><br>
 						<!-- 성별 -->
 						<div class="join_title"><label for="gen">성별</label></div>
 						<select name="gen" id="gen">
@@ -75,7 +75,7 @@
 						</select><br>
 						<!-- 본인 확인 이메일 -->
 						<div class="join_title"><label for="mail">본인 확인 이메일<span>(선택)</span></label></div>
-						<input type="text" id="mail" placeholder="선택입력"><br>
+						<input type="text" id="mail" placeholder="선택입력" class="regex"><br>
 					</div>
 					
 					<!-- 휴대전화 본인인증 -->
