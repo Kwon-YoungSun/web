@@ -62,7 +62,7 @@ document.getElementById('months').innerHTML = str;
 });*/
 
 var pat;	// 패턴을 담을 변수
-var str;	// 표시할 메세지를 담을 변수
+//var str;	// 표시할 메세지를 담을 변수
 $(document).ready(function(){
 	var cur;	// 현재 포커스를 담을 변수
 	
@@ -70,10 +70,9 @@ $(document).ready(function(){
 		blur: function(){
 			cur = '#' + $(this).attr('id');
 			if(!($(cur).val())){
-				str = '필수 정보입니다.';
+				var text = cur + '_confirm';
+				$(text).text('필수 정보입니다.').css('display', 'block');
 			}
-			var text = cur + '_confirm';
-			$(text).text(str).css('display', 'block');
 		},
 		change: function(){
 			// 아이디 가져오고
@@ -81,37 +80,32 @@ $(document).ready(function(){
 			// 아이디에 맞는 형식화검사 함수를 호출하고
 			switch(cur){
 			case '#id':
-				idConf(cur);
+				pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
 				break;
 			case '#pw':
-				pwConf(cur);
+				pat = /^[0-9]{8}$/;
 				break;
 			case '#pwconf':
-				
 				break;
+			case '#name':
+				pat = /^[가-힣]{3,5}/;
+				break;
+			}
+			
+			if(cur != '#pwconf'){
+				var result = $(cur).val().replace(pat, '');
+				if(result == ''){
+					$(cur + '_confirm').text('').css('display', 'none');				
+				} else {
+					$(cur + '_confirm').text('잘못된 형식입니다.').css('display', 'block');
+				}
+			} else {
+				if($('#pw').val() == $(cur).val()){
+					$(cur + '_confirm').text('비밀번호가 일치합니다.').css('display', 'block');
+				} else {
+					$(cur + '_confirm').text('비밀번호가 일치하지 않습니다.').css('display', 'block');					
+				}
 			}
 		}
 	});
 });
-
-function idConf(cur){
-	pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
-	var result = $(cur).val().replace(pat, '');
-	if(result == ''){
-		str = '멋진 아이디네요!';
-	} else {
-		str = '잘못된 형식입니다.';
-	}
-	$('#id_confirm').text(str).css('display', 'block');
-}
-
-function pwConf(cur){
-	pat = /^/g;
-	var result = $(cur).val().replace(pat, '');
-	if(result == ''){
-		return;
-	} else {
-		str = '잘못된 형식입니다.';
-	}
-	$('#pw_confirm').text(str).css('display', 'block');
-}
