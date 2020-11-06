@@ -51,8 +51,8 @@
 						<div id="name_confirm"></div>
 						<!-- 생년월일 -->
 						<div class="join_title"><label for="year">생년월일</label></div>
-						<input type="text" id="year" placeholder="년(4자)" maxlength="4" class="regex">
-						<select name="months" id="months">
+						<input type="text" id="year" placeholder="년(4자)" maxlength="4" class="date">
+						<select name="months" id="months" class="date">
 							<option value="월">월</option>
 							<!-- <option value=1>1</option>
 							<option value=2>2</option>
@@ -67,7 +67,7 @@
 							<option value=11>11</option>
 							<option value=12>12</option> -->
 						</select>
-						<input type="text" id="day" placeholder="일" maxlength="2" class="regex">
+						<input type="text" id="day" placeholder="일" maxlength="2" class="date">
 						<div id="date_confirm"></div>
 						<!-- 성별 -->
 						<div class="join_title"><label for="gen">성별</label></div>
@@ -81,7 +81,7 @@
 						
 						<!-- 본인 확인 이메일 -->
 						<div class="join_title"><label for="mail">본인 확인 이메일<span>(선택)</span></label></div>
-						<input type="text" id="mail" placeholder="선택입력" class="regex"><br>
+						<input type="text" id="mail" placeholder="선택입력"><br>
 					</div>
 					
 					<!-- 휴대전화 본인인증 -->

@@ -1,4 +1,4 @@
-var str='<option value="month">월</option>';
+var str='<option value="월">월</option>';
 
 for(var i = 0; i < 12; i++){
 	str+='<option value=' + (i+1) + '>' +  (i+1) + '</option>';
@@ -38,30 +38,87 @@ document.getElementById('months').innerHTML = str;
 	});
 });*/
 
-/*$(document).ready(function(){
+$(document).ready(function(){
 	var str; 	// 표시할 메세지를 담을 변수
-	var pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
 	
 	$('#id').on({
 		blur: function(){
 			if(!($('#id').val())){
-				str = '필수 정보입니다.';
+				$('#id_confirm').css('color', 'red').text('필수 정보입니다.').css('display', 'block');
 			}
-			$('#id_confirm').text(str).css('display', 'block');
 		},
 		change: function(){
+			var pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
 			var result = $('#id').val().replace(pat, '');
 			if(result == ''){
-				str = '멋진 아이디네요!';
+				$('#id_confirm').css('color', 'green').text('멋진 아이디네요!').css('display', 'block');
 			} else {
-				str = '잘못된 형식입니다.';
+				$('#id_confirm').css('color', 'red').text('5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.').css('display', 'block');
 			}
-			$('#id_confirm').text(str).css('display', 'block');
 		}
 	});
-});*/
+	
+	$('#pw').on({
+		blur: function(){
+			if(!($('#pw').val())){
+				$('#pw_confirm').css('color', 'red').text('필수 정보입니다.').css('display', 'block');
+			}
+		},
+		change: function(){
+			var pat = /^[a-z]{1}[a-z0-9_-]{4,18}$/g;
+			var result = $('#pw').val().replace(pat, '');
+			if(result == ''){
+				$('#pw_confirm').css('display', 'none');
+			} else {
+				$('#pw_confirm').css('color', 'red').text('8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.').css('display', 'block');
+			}
+		}
+	});
+	
+	$('#name').on({
+		blur: function(){
+			if(!($('#name').val())){
+				$('#name_confirm').css('color', 'red').text('필수 정보입니다.').css('display', 'block');
+			}
+		},
+		change: function(){
+			var pat = /^[가-힣]{2,10}$/;
+			var result = $('#name').val().replace(pat, '');
+			if(result == ''){
+				$('#name_confirm').css('display', 'none');
+			} else {
+				$('#name_confirm').css('color', 'red').text('2~10자 한글을 사용하세요.').css('display', 'block');
+			}
+		}
+	});
+	
+	// 생년월일
+	/*
+		1. 년도가 비어있는 경우 -> 태어난 년도 4자리를 정확하게 입력해 주세요.
+		2. 월이 비어있는 경우(월 선택 시) -> 태어난 월을 선택하세요.
+		3. 태어난 일이 비어있거나
+	*/
+	$('.date').on({
+		blur: function(){
+			// 비어 있는 데이터가 있는 경우
+			if(!($('#year').val())){
+				alert('year');
+			} else if(($('select option:selected').val()) == '월'){
+				alert('months');
+			} else if(!($('#day').val())){
+				alert('day');
+			} else {
+				return;
+			}
+			
+			/*var str = '';
+			str = $('select option:selected').val();
+			alert(str);*/
+		}
+	});
+});
 
-var pat;	// 패턴을 담을 변수
+/*var pat;	// 패턴을 담을 변수
 //var str;	// 표시할 메세지를 담을 변수
 $(document).ready(function(){
 	var cur;	// 현재 포커스를 담을 변수
@@ -86,6 +143,7 @@ $(document).ready(function(){
 				pat = /^[0-9]{8}$/;
 				break;
 			case '#pwconf':
+				pat = /^[0-9]{8}$/;
 				break;
 			case '#name':
 				pat = /^[가-힣]{3,5}/;
@@ -108,4 +166,19 @@ $(document).ready(function(){
 			}
 		}
 	});
-});
+	
+	$('#year').change(function(){
+		var year = $('#year').val();
+		if(year > 2020 || year < 1900){
+			$('#date_confirm').text('년도를 정확하게 입력하세요.').css('display', 'block');
+		} else {
+			$('#date_confirm').text('').css('display', 'none');			
+		}
+	});
+	
+	$('#day').change(function(){
+		var day = $('#day').val();
+		
+	});
+	
+});*/
