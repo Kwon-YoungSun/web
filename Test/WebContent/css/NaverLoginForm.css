@@ -52,7 +52,7 @@ input[type="text"]:focus, input[type="password"]:focus, #months:focus,
 
 
 #year, #day{
-	width: 120px;
+	width: 119px;
 	height: 27px;
 	padding: 11px 14px;
 }
@@ -77,7 +77,7 @@ input[type="text"]:focus, input[type="password"]:focus, #months:focus,
   	outline: none;
 }
 
-input[type=submit]{
+#subBtn {
   font-size: 18px;
   background-color: #03C75A;
   border: none;
@@ -93,7 +93,7 @@ button {
 	background-color: #03C75A;
 	border: none;
 	color: white;
-	padding: 16px 12px;
+	padding: 16px 11px;
 	text-decoration: none;
 	margin: 4px 2px;
 	cursor: pointer;
@@ -155,8 +155,40 @@ footer > p {
 	color: #8E8E8E;
 	font-size: 15px;
 }
+
+.lock_img {
+	position: absolute;
+	top: 30%;
+	right: 13px;
+	width: 24px;
+	height: 24px;
+	background-image: url("../img/download/pw_default.png");
+	background-repeat: no-repeat;
+	background-size : 80%;
+	cursor: pointer;
+}
+.step_txt {
+	position: absolute;
+/*	display: inline-block;*/
+ 	display: none;
+	right: 40px;
+	top: 40%;
+	font-size: 12px;
+/* 	color: #03c75a; */
+}
+.lock_img2 {
+	position: absolute;
+	top: 30%;
+	right: 13px;
+	width: 24px;
+	height: 24px;
+	background-image: url("../img/download/pwconf_default.png");
+	background-repeat: no-repeat;
+	background-size : 80%;
+	cursor: pointer;
+}
 /*confirm 영역(숨겨진 영역*/
-#id_confirm, #pw_confirm, #name_confirm, #pwconf_confirm, #date_confirm {
+#id_confirm, #pw_confirm, #name_confirm, #pwconf_confirm, #date_confirm, #mail_confirm, #tel_confirm, #gen_confirm, #sn_confirm, #sn_notice{
 	display: none;
 	font-size: 12px;
 	padding: 10px 0;
